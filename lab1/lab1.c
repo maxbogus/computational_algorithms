@@ -1,6 +1,8 @@
 #include <stdio.h>
 
-// 
+int calculateX() {
+    return 0;
+}
 
 int main() {
     // попросить ввести пользователя название файла с данными
@@ -21,6 +23,15 @@ int main() {
 
     // считаем y(X)
 
-    printf("Hello, World!");
+    char *messageStr;
+
+    int formattedStrResult = asprintf(&messageStr, "X is: %d!", calculateX());
+
+    if(formattedStrResult > 0){
+        printf(messageStr);
+    } else {
+        printf("X produced no result!");
+    }
+    
     return 0;
 }
